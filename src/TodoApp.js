@@ -16,6 +16,7 @@ export default function TodoApp() {
     const addTodo = newTodoText => setTodos([...todos, {id: uuid(), task: newTodoText, completed: false}])
     const removeTodo = todoId => setTodos(todos.filter(todo => todo.id !== todoId))
     const toggleTodo = todoId => setTodos(todos.map(todo => todo.id === todoId ? {...todo, completed: !todo.completed} : todo))
+    const updateTodo = (todoId, newText) => setTodos(todos.map(todo => todo.id === todoId ? {...todo, task: newText} : todo))
 
     return (
         <Paper
@@ -35,7 +36,7 @@ export default function TodoApp() {
             <Grid container justify="center" style={{ marginTop: "1rem" }}>
                 <Grid item xs={11} md={8} lg={4}>
                     <TodoForm addTodo={addTodo} />
-                    <TodoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo} />
+                    <TodoList todos={todos} removeTodo={removeTodo} toggleTodo={toggleTodo} updateTodo={updateTodo} />
                 </Grid>
             </Grid>
 
