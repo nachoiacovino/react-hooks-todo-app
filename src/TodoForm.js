@@ -14,7 +14,7 @@ export default function TodoForm({ addTodo }) {
     return (
         <Paper style={{ margin: "1rem 0", padding: "0 1rem" }}>
             <form onSubmit={handleSubmit}>
-                <TextField value={value} onChange={handleChange} margin="normal" label="Add New Todo" fullwidth />
+                <TextField value={value} onChange={handleChange} margin="normal" label="Add New Todo" fullwidth="true" />
             </form>
         </Paper>
     )
