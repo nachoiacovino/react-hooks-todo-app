@@ -10,8 +10,7 @@ export default (key, initialVal) => {
     })
     useEffect(() => {
         window.localStorage.setItem(key, JSON.stringify(state))
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [state])
+    }, [state, key])
 
     return [state, setState]
 }
