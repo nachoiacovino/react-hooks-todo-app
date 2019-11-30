@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, memo } from 'react'
 import { ListItem, ListItemText, ListItemSecondaryAction, Checkbox, IconButton } from '@material-ui/core'
 import { Delete, Edit } from '@material-ui/icons'
 import useToggle from './hooks/useToggle'
 import EditTodoForm from './EditTodoForm'
 import { DispatchContext } from './contexts/TodosContext.js'
 
-export default ({ id, task, completed }) => {
+export default memo(({ id, task, completed }) => {
     const [isEditing, toggle] = useToggle()
     const dispatch = useContext(DispatchContext)
     return (
@@ -29,4 +29,4 @@ export default ({ id, task, completed }) => {
             }
         </ListItem>
     )
-}
+})
