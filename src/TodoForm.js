@@ -5,11 +5,11 @@ import TodosContext from './contexts/TodosContext.js'
 
 export default props => {
     const [value, handleChange, reset] = useInputState("")
-    const { addTodo } = useContext(TodosContext)
+    const { dispatch } = useContext(TodosContext)
 
     const handleSubmit = e => {
         e.preventDefault()
-        addTodo(value)
+        dispatch({ type: 'ADD', task: value })
         reset()
     }
 

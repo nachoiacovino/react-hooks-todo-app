@@ -5,11 +5,11 @@ import TodosContext from './contexts/TodosContext.js'
 
 export default ({ id, task, toggle }) => {
     const [value, handleChange] = useInputState(task)
-    const { updateTodo } = useContext(TodosContext)
+    const { dispatch } = useContext(TodosContext)
 
     const handleEdit = e => {
         e.preventDefault()
-        updateTodo(id, value)
+        dispatch({ type: 'UPDATE', id, newTask: value })
         toggle()
     }
 

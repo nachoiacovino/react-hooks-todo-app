@@ -13,7 +13,7 @@ export default props => {
                     {todos.map((todo, i) =>
                         <React.Fragment key={i}>
                             <Todo key={todo.id} {...todo} />
-                            {i < todos.length - 1 && <Divider/> }
+                            {i < todos.length - 1 && <Divider/>}
                         </React.Fragment>
                     )}
                 </List>
@@ -22,5 +22,6 @@ export default props => {
     return (
         <Paper style={{ padding: "1rem"}}>
                 You don't have any Todos yet, you should add one!
-        </Paper>)
+        </Paper>
+    )
 }
