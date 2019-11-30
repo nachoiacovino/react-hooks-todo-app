@@ -3,11 +3,11 @@ import { ListItem, ListItemText, ListItemSecondaryAction, Checkbox, IconButton }
 import { Delete, Edit } from '@material-ui/icons'
 import useToggle from './hooks/useToggle'
 import EditTodoForm from './EditTodoForm'
-import TodosContext from './contexts/TodosContext.js'
+import { DispatchContext } from './contexts/TodosContext.js'
 
 export default ({ id, task, completed }) => {
     const [isEditing, toggle] = useToggle()
-    const { dispatch } = useContext(TodosContext)
+    const dispatch = useContext(DispatchContext)
     return (
         <ListItem style={{ height: "64px" }}>
             {isEditing ? <EditTodoForm id={id} task={task} toggle={toggle} />

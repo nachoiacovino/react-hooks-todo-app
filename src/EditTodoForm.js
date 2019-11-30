@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { TextField } from '@material-ui/core'
 import useInputState from './hooks/useInputState'
-import TodosContext from './contexts/TodosContext.js'
+import { DispatchContext } from './contexts/TodosContext.js'
 
 export default ({ id, task, toggle }) => {
     const [value, handleChange] = useInputState(task)
-    const { dispatch } = useContext(TodosContext)
+    const dispatch = useContext(DispatchContext)
 
     const handleEdit = e => {
         e.preventDefault()
